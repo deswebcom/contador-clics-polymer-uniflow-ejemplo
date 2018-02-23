@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/uniflow-polymer/application-state.html">
+
+<link rel="import" href="muestra-clics.html">
+<link rel="import" href="boton-clic.html">
+<link rel="import" href="contador-clics-action-dispatcher.html">
+
+<dom-module id="clics-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <contador-clics-action-dispatcher state="{{state}}"></contador-clics-action-dispatcher>
+    <muestra-clics clics="[[state.clics]]"></muestra-clics> 
+    <boton-clic></boton-clic>
+
+  </template>
+
+  <script>
+
+    class ClicsApp extends UniFlow.ApplicationState(Polymer.Element) {
+      static get is() { return 'clics-app'; }
+    
+      ready() {
+        super.ready();
+        this.set('state', {
+          clics: 0
+        });
+      }
+    }
+
+    window.customElements.define(ClicsApp.is, ClicsApp);
+  </script>
+</dom-module>

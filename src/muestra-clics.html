@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="muestra-clics">
+  <template>
+    <style>
+      :host {
+        display: block
+      }
+    </style>
+
+    Llevas [[clics]] clics.
+
+  </template>
+
+  <script>
+    class MuestraClics extends Polymer.Element {
+      static get is() {
+        return 'muestra-clics';
+      }
+
+      static get properties() {
+        return {
+          clics: Number
+        };
+      }
+
+      
+
+    }
+
+    window.customElements.define(MuestraClics.is, MuestraClics);
+  </script>
+</dom-module>

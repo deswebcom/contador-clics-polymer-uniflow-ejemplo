@@ -1,0 +1,44 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/uniflow-polymer/action-emitter.html">
+
+
+<dom-module id="boton-clic">
+  <template>
+    <style>
+      :host {
+        display: block
+      }
+    </style>
+
+    <button on-click="nuevoClic">clic!!</button>
+
+  </template>
+
+  <script>
+    class BotonClic extends UniFlow.ActionEmitter(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'boton-clic';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+          
+        };
+      }
+
+      nuevoClic() {
+        this.emitAction({
+          type: contadorClics.actions.AGREGAR_CLIC
+        });
+      }
+    }
+
+    window.customElements.define(BotonClic.is, BotonClic);
+  </script>
+</dom-module>

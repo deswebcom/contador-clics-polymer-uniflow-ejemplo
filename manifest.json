@@ -1,0 +1,6 @@
+{
+  "name": "clics",
+  "short_name": "clics",
+  "start_url": "/",
+  "display": "standalone"
+}

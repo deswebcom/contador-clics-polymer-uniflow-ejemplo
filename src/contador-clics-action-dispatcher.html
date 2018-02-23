@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/uniflow-polymer/action-dispatcher.html">
+
+<dom-module id="contador-clics-action-dispatcher">
+  <script>
+    class ContadorClicsActionDispatcher extends UniFlow.ActionDispatcher(Polymer.Element) {
+      static get is() {
+        return 'contador-clics-action-dispatcher';
+      }
+      
+      [contadorClics.actions.AGREGAR_CLIC](details) {
+        this.set('state.clics', this.state.clics + 1);
+      }
+
+    }
+
+    window.customElements.define(ContadorClicsActionDispatcher.is, ContadorClicsActionDispatcher);
+  </script>
+</dom-module>
